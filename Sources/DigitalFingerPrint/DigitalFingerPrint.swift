@@ -7,7 +7,7 @@ public struct DigitalFingerPrint {
     public init() async {
       
         let configuration = Configuration(
-          apiKey: "2QS3r072OajKcaVwizy8",
+          apiKey: "RCSwyLohbl2J4z9GJ91F",
           region: Region.eu
         );
         let client = FingerprintProFactory.getInstance(configuration)

@@ -7,7 +7,7 @@ public struct DigitalFingerPrint {
     public init() {
     }
    
-    public init() async {
+    public func initSdk() async {
       
         let configuration = Configuration(
           apiKey: "RCSwyLohbl2J4z9GJ91F",

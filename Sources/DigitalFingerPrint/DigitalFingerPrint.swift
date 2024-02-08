@@ -3,8 +3,8 @@
 import FingerprintPro
 
 public struct DigitalFingerPrint {
-   
-    public init() async {
+ 
+    public func initSdk() async {
       
         let configuration = Configuration(
           apiKey: "RCSwyLohbl2J4z9GJ91F",
@@ -16,7 +16,7 @@ public struct DigitalFingerPrint {
           let visitorId = try await client.getVisitorId()
           print(visitorId)
         } catch {
-          // process error
+
         }
     }
 }

@@ -7,12 +7,13 @@ public struct DigitalFingerPrint {
     public init() {
     }
    
-    public func initSdk() async {
+    public func initSdk(dfpConfiguration : DFPConfiguration) async {
       
         let configuration = Configuration(
           apiKey: "RCSwyLohbl2J4z9GJ91F",
           region: Region.eu
         );
+        print(dfpConfiguration.merchantId)
         let client = FingerprintProFactory.getInstance(configuration)
 
         do {

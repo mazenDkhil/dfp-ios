@@ -12,7 +12,8 @@ public struct DeviceFingerprint {
         Task {
             do {
                 let deviceHash = try await container.getDeviceHash.execute(request: GetDeviceHashCommand(apiKey: self.apiKey ?? ""))
-               return deviceHash
+                print("DEVICE HASH:",deviceHash)
+                return deviceHash
             } catch{
                 throw error
             }

@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "DigitalFingerPrint",
+    name: "DeviceFingerprint",
     platforms: [
         .iOS(.v13),
     ],
     products: [
         .library(
-            name: "DigitalFingerPrint",
-            targets: ["DigitalFingerPrint"]
+            name: "DeviceFingerprint",
+            targets: ["DeviceFingerprint"]
         ),
     ],
     dependencies: [
@@ -17,14 +17,14 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "DigitalFingerPrint",
+            name: "DeviceFingerprint",
             dependencies: [
                 .product(name: "FingerprintPro", package: "fingerprintjs-pro-ios"),
             ]
         ),
         .testTarget(
-            name: "DigitalFingerPrintTests",
-            dependencies: ["DigitalFingerPrint"]
+            name: "DeviceFingerprintTests",
+            dependencies: ["DeviceFingerprint"]
         ),
     ]
 )

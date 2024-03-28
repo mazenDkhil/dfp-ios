@@ -1,7 +1,7 @@
 import XCTest
-@testable import DigitalFingerPrint
+@testable import DeviceFingerprint
 
-final class DigitalFingerPrintTests: XCTestCase {
+final class DeviceFingerprintTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

@@ -6,7 +6,9 @@
 //
 public struct DFPConfiguration {
     public var merchantId: String 
-    public init(merchantId: String) {
+    public var apiKey: String
+    public init(merchantId: String, apiKey:String) {
         self.merchantId = merchantId
+        self.apiKey = apiKey
     }
 }

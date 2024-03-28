@@ -1,26 +1,27 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
 import FingerprintPro
 
 public struct DigitalFingerPrint {
+    private var client: FingerprintClientProviding?
     
-    public init() {
-    }
-   
-    public func initSdk(dfpConfiguration : DFPConfiguration) async {
-      
+    public init(dfpConfiguration: DFPConfiguration) {
         let configuration = Configuration(
-          apiKey: "RCSwyLohbl2J4z9GJ91F",
-          region: Region.eu
-        );
-        print(dfpConfiguration.merchantId)
-        let client = FingerprintProFactory.getInstance(configuration)
+            apiKey: dfpConfiguration.apiKey,
+            region: Region.eu
+        )
+        self.client = FingerprintProFactory.getInstance(configuration)
+    }
 
+    public func getDeviceHash() async {
+        guard let client = self.client else {
+            print("FingerprintProFactory client is not initialized.")
+            return
+        }
+        
         do {
-          let visitorId = try await client.getVisitorId()
-          print(visitorId)
+            let visitorId = try await client.getVisitorId()
+            print(visitorId)
         } catch {
-          // process error
+            print("FAILED TO GET DEVICE HASH")
         }
     }
 }
